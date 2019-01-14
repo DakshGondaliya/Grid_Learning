@@ -1,1 +1,1 @@
-"# Learning and understanding the concept of Grid" 
+# Learning and understanding the concept of Grid
