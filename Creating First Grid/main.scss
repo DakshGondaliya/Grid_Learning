@@ -1,0 +1,58 @@
+$mycolor: #f3f3f7;
+
+$padding: (p1: 2px,
+p2: 10px,
+p3: 15px);
+
+$margin: (m1: 5px,
+m2: 10px,
+m3: 30px);
+
+.container {
+  // padding: map-get($padding, p1);
+  margin: map-get($margin, m3) auto;
+  background-color: $mycolor;
+  width: 756px;
+  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.25);
+  display: grid;
+  grid-template-rows: 150px 150px;
+  grid-template-columns: 250px 250px 250px;
+  grid-gap: map-get($padding, p1);
+}
+
+.item {
+  padding: map-get($padding, p3);
+  font-size: 30px;
+  font-family: sans-serif;
+  text-align: center;
+  color: #000;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+  &--1 {
+    background-color: orangered;
+  }
+
+  &--2 {
+    background-color: yellow;
+  }
+
+  &--3 {
+    background-color: yellowgreen;
+  }
+
+  &--4 {
+    background-color: pink;
+  }
+
+  &--5 {
+    background-color: blueviolet;
+  }
+
+  &--6 {
+    background-color: goldenrod;
+  }
+}
+
+.item:hover {
+  transform: scale(1.04);
+}
