@@ -1,5 +1,5 @@
 body {
-  background-color: #f3f3f7;
+  background-color: #f3f7f3;
 }
 
 .cointainer {
@@ -10,10 +10,10 @@ body {
           box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4);
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 80px 180px 350px 80px;
-      grid-template-rows: 80px 180px 350px 80px;
-  -ms-grid-columns: (1fr)[3] 200px;
-      grid-template-columns: repeat(3, 1fr) 200px;
+  -ms-grid-rows: [header-start] 80px [header-end box-start] 180px [box-end main-start] 360px [main-end footer-start] 80px [footer-end];
+      grid-template-rows: [header-start] 80px [header-end box-start] 180px [box-end main-start] 360px [main-end footer-start] 80px [footer-end];
+  -ms-grid-columns: ([col-start] 3fr [col-end])[3] 2.4fr [grid-end];
+      grid-template-columns: repeat(3, [col-start] 3fr [col-end]) 2.4fr [grid-end];
   grid-gap: 20px;
 }
 
@@ -24,71 +24,23 @@ body {
   font-family: sans-serif;
   -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: red;
 }
 
 .item--1 {
-  background-color: #ff3e22;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  grid-column: 1/-1;
-}
-
-.item--2 {
-  background-color: #ff3e22;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-
-.item--3 {
-  background-color: #ff3e22;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-}
-
-.item--4 {
-  background-color: #ff3e22;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-column: 3/4;
+  grid-column: col-start 1 / grid-end;
 }
 
 .item--5 {
-  background-color: #ff3e22;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  grid-row: 2/4;
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 1;
-  grid-column: 4/5;
+  grid-row: box-start/main-end;
+  grid-column: col-end 3 / grid-end;
 }
 
 .item--6 {
-  background-color: #ff3e22;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1/4;
+  grid-column: col-start 1 / col-end 3;
 }
 
 .item--7 {
-  background-color: #ff3e22;
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  grid-row: 4/5;
-  grid-column: 1/-1;
+  grid-column: col-start 1 / grid-end;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,15 +1,18 @@
 body {
-  background-color: #f3f3f7;
+  background-color: #f3f7f3;
 }
 
 .cointainer {
   width: 1000px;
   margin: 5% auto;
   background-color: #fff;
-  box-shadow: 5px 5px 25px rgba(0, 0, 0, .4);
-  display: grid;
-  grid-template-rows: 80px 180px 350px 80px;
-  grid-template-columns: repeat(3, 1fr) 200px;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4);
+  // box-shadow: rgba(0, 0, 0, 0.2) 0px 1rem 5rem;
+  display: grid; // grid-template-rows: 80px 180px 350px 80px;
+  // grid-template-columns: 3fr 3fr 3fr 2.4fr;
+  // For name method
+  grid-template-rows: [header-start] 80px [header-end box-start] 180px [box-end main-start] 360px [main-end footer-start] 80px [footer-end];
+  grid-template-columns: repeat(3, [col-start]3fr [col-end]) 2.4fr [grid-end];
   grid-gap: 20px;
 }
 
@@ -17,49 +20,74 @@ body {
   font-size: 30px;
   padding: 10px;
   color: #fff;
-  font-family: sans-serif;
-  // text-align: center;
+  font-family: sans-serif; // text-align: center;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-
+  background-color: red; // My Method
+  // &--1 {
+  //   grid-row:1/2;
+  //   grid-column:1/-1;
+  // }
+  // &--2 {
+  //   grid-row:2/3;
+  //   grid-column:1/2;
+  // }
+  // &--3 {
+  //   grid-row:2/3;
+  //   grid-column:2/3;
+  // }
+  // &--4 {
+  //   grid-row:2/3;
+  //   grid-column:3/4;
+  // }
+  // &--5 {
+  //   grid-row:2/4;
+  //   grid-column:4/5;
+  // }
+  // &--6 {
+  //   grid-row:3/4;
+  //   grid-column:1/4;
+  // }
+  // &--7 {
+  //   grid-row:4/5;
+  //   grid-column:1/-1;
+  // }
+  // Solution
+  //   &--1 {
+  //     grid-column: 1/-1;
+  //   }
+  //   &--2 {
+  //   }
+  //   &--3 {
+  //   }
+  //   &--4 {
+  //   }
+  //   &--5 {
+  //     grid-row: 2/span 2;
+  //     grid-column: 4/5;
+  //   }
+  //   &--6 {
+  //     grid-column: 1/span 3;
+  //   }
+  //   &--7 {
+  //     grid-column: 1/-1;
+  //   }
+  // Name Method
   &--1 {
-    background-color: #ff3e22;
-    grid-row: 1/2;
-    grid-column: 1/-1;
-  }
-
-  &--2 {
-    background-color: #ff3e22;
-    grid-row: 2/3;
-    grid-column: 1/2;
-  }
-
-  &--3 {
-    background-color: #ff3e22;
-    grid-row: 2/3;
-    grid-column: 2/3;
-  }
-
-  &--4 {
-    background-color: #ff3e22;
-    grid-row: 2/3;
-    grid-column: 3/4;
-  }
-
+    grid-column: col-start 1 / grid-end;
+  } // &--2 {
+  // }
+  // &--3 {
+  // }
+  // &--4 {
+  // }
   &--5 {
-    background-color: #ff3e22;
-    grid-row: 2/4;
-    grid-column: 4/5;
+    grid-row: box-start/main-end;
+    grid-column: col-end 3 / grid-end;
   }
-
   &--6 {
-    background-color: #ff3e22;
-    grid-row: 3/4;
-    grid-column: 1/4;
+    grid-column: col-start 1 / col-end 3;
   }
-
   &--7 {
-    background-color: #ff3e22;
-    grid-row: 4/5;
-    grid-column: 1/-1;
+    grid-column: col-start 1 / grid-end;
   }
 }
